@@ -3,11 +3,11 @@ import './App.css';
 
 function App() {
   const [data, setData] = useState<{ title: string, body: string } | null>(null);
-  const fetchLocally = false;
+  const fetchLocally = true;
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      fetch('https://jsonplaceholder.typicode.com/posts/1')
+      fetch('https://jsonplaceholder.typicode.com/posts/20')
         .then(response => response.json())
         .then(json => setData(json))
         .catch(error => console.error(`Error: ${error}`));
